@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "220931661937",
+    "project_id": "myproject-37150",
+    "storage_bucket": "myproject-37150.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220931661937:android:3cdf3ddd1432b59658fbd0",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220931661937-h9ivrdo0fppr8q9qjsmno917pnhhief7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBh1bsxZj52YwnUbxbUHuRqRzsTaj21Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220931661937-h9ivrdo0fppr8q9qjsmno917pnhhief7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220931661937:android:02c49da2603f94d558fbd0",
+        "android_client_info": {
+          "package_name": "com.example.agora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220931661937-h9ivrdo0fppr8q9qjsmno917pnhhief7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBh1bsxZj52YwnUbxbUHuRqRzsTaj21Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220931661937-h9ivrdo0fppr8q9qjsmno917pnhhief7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
