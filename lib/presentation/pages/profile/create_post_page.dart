@@ -223,7 +223,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
 
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
-          builder: (context) => PopupCalling(myPersonalId),
+          builder: (context) => PopupCalling(myPersonalId, voice_video: '',),
         ),
         (route) => false);
   }

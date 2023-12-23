@@ -8,8 +8,9 @@ import 'package:agora/presentation/screens/mobile_screen_layout.dart';
 
 class PopupCalling extends StatefulWidget {
   final String userId;
+  final String voice_video;
 
-  const PopupCalling(this.userId, {Key? key}) : super(key: key);
+  const PopupCalling(this.userId, {Key? key,required this.voice_video}) : super(key: key);
 
   @override
   State<PopupCalling> createState() => _PopupCallingState();
@@ -32,7 +33,7 @@ class _PopupCallingState extends State<PopupCalling> {
               Go(context).push(
                   page: CallingRingingPage(
                       channelId: state.myPersonalInfoInReelTime.channelId,
-                      clearMoving: clearMoving),
+                      clearMoving: clearMoving, voiceORvideo: widget.voice_video,),
                   withoutRoot: false);
             }
           }

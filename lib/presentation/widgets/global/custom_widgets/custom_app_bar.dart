@@ -168,6 +168,18 @@ class CustomAppBar {
       ),
       actions: [
         GestureDetector(
+          onTap: () async {
+            print("hello");
+            UserPersonalInfo myPersonalInfo =
+            UserInfoCubit.getMyPersonalInfo(context);
+            amICalling = true;
+            await Go(context).push(
+                page: VideoCallPage(
+                    usersInfo: usersInfo, myPersonalInfo: myPersonalInfo, voiceORvideo: 'voice',),
+                withoutRoot: false,
+                withoutPageTransition: true);
+            amICalling = false;
+          },
           child: SvgPicture.asset(
             IconsAssets.phone,
             height: 27,
@@ -184,12 +196,10 @@ class CustomAppBar {
               amICalling = true;
               await Go(context).push(
                   page: VideoCallPage(
-                      usersInfo: usersInfo, myPersonalInfo: myPersonalInfo),
+                      usersInfo: usersInfo, myPersonalInfo: myPersonalInfo, voiceORvideo: 'video',),
                   withoutRoot: false,
                   withoutPageTransition: true);
               amICalling = false;
-
-
           },
           child: SvgPicture.asset(
             IconsAssets.videoPoint,

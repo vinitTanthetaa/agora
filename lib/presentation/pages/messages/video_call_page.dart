@@ -18,7 +18,7 @@ enum UserCallingType { sender, receiver }
 class CallPage extends StatefulWidget {
   final String channelName;
   final String userCallingId;
-
+  final String voiceORvideo;
   final List<UserPersonalInfo>? usersInfo;
   final UserCallingType userCallingType;
   final ClientRoleType role;
@@ -28,6 +28,7 @@ class CallPage extends StatefulWidget {
     required this.channelName,
     this.userCallingId = "",
     required this.userCallingType,
+    required this.voiceORvideo,
     required this.role,
     this.usersInfo,
   }) : super(key: key);
@@ -87,7 +88,9 @@ class CallPageState extends State<CallPage> {
     );
       setState(() {});
     await _engine.setClientRole(role: ClientRoleType.clientRoleBroadcaster);
-    await _engine.enableVideo();
+    if(widget.voiceORvideo == 'video'){
+      await _engine.enableVideo();
+    }
     await _engine.enableAudio();
     await _engine.startPreview();
     setState(() {});
@@ -114,10 +117,10 @@ class CallPageState extends State<CallPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Center(
+         widget.voiceORvideo == 'voice'? SizedBox() :Center(
             child: _remoteVideo(),
-          ),
-          Align(
+          )  ,
+          widget.voiceORvideo == 'voice' ? const Center(child: CircleAvatar(radius: 50,backgroundColor: Colors.white,child: Icon(Icons.person,color: Colors.black,),)) : Align(
             alignment: Alignment.topLeft,
             child: SizedBox(
               width: 100,
@@ -186,7 +189,7 @@ class CallPageState extends State<CallPage> {
     _engine.switchCamera();
   }
   void _onCallEnd(BuildContext context) {
-    setState(() => amICalling = false);
+    // setState(() => amICalling = false);
     _engine.leaveChannel();
     _engine.release();
     setState(() {});

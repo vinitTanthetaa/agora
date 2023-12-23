@@ -132,7 +132,7 @@ class _CreateStoryPageState extends State<CreateStoryPage> {
           sharePrefs.remove(myPersonalId);
           if (!mounted) return;
           Navigator.of(context).pushAndRemoveUntil(
-            CupertinoPageRoute(builder: (_) => PopupCalling(myPersonalId)),
+            CupertinoPageRoute(builder: (_) => PopupCalling(myPersonalId, voice_video: '',)),
                 (route) => false,
           );
         }

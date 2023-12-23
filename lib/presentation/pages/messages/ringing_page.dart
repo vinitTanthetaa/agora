@@ -12,9 +12,10 @@ import 'package:agora/presentation/pages/messages/video_call_page.dart';
 
 class CallingRingingPage extends StatefulWidget {
   final String channelId;
+  final String voiceORvideo;
   final VoidCallback clearMoving;
   const CallingRingingPage(
-      {Key? key, required this.channelId, required this.clearMoving})
+      {Key? key, required this.channelId, required this.voiceORvideo,required this.clearMoving})
       : super(key: key);
 
   @override
@@ -39,8 +40,7 @@ class _CallingRingingPageState extends State<CallingRingingPage> {
             ..getUsersInfoInThisRoom(channelId: widget.channelId),
           builder: (context, state) {
             if (pop) {
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                setState(() => pop = false);
+              WidgetsBinding.instance.addPostFrameCallback((_) {setState(() => pop = false);
                 Navigator.of(context).maybePop();
               });
             }
@@ -65,7 +65,7 @@ class _CallingRingingPageState extends State<CallingRingingPage> {
       page: CallPage(
         channelName: widget.channelId,
         role: ClientRoleType.clientRoleBroadcaster,
-        userCallingType: UserCallingType.receiver,
+        userCallingType: UserCallingType.receiver, voiceORvideo: widget.voiceORvideo,
       ),
       withoutRoot: false,
     );

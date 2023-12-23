@@ -11,11 +11,12 @@ import 'package:agora/presentation/cubit/callingRooms/calling_rooms_cubit.dart';
 class VideoCallPage extends StatelessWidget {
   final List<UserPersonalInfo> usersInfo;
   final UserPersonalInfo myPersonalInfo;
-
+  final String voiceORvideo;
   const VideoCallPage({
     Key? key,
     required this.usersInfo,
     required this.myPersonalInfo,
+    required this.voiceORvideo,
   }) : super(key: key);
 
   @override
@@ -68,7 +69,7 @@ class VideoCallPage extends StatelessWidget {
       channelName: roomsState.channelId,
       role: ClientRoleType.clientRoleBroadcaster,
       userCallingType: UserCallingType.sender,
-      usersInfo: usersInfo,
+      usersInfo: usersInfo, voiceORvideo: voiceORvideo,
     );
   }
 

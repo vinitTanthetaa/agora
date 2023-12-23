@@ -34,7 +34,7 @@ class _GetMyPersonalInfoState extends State<GetMyPersonalInfo> {
             myPersonalId = widget.myPersonalId;
             Get.offAll(
               ResponsiveLayout(
-                mobileScreenLayout: PopupCalling(myPersonalId),
+                mobileScreenLayout: PopupCalling(myPersonalId, voice_video: '',),
                 webScreenLayout: const WebScreenLayout(),
               ),
             );

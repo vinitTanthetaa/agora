@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:agora/core/utility/private_keys.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -71,7 +72,7 @@ class CallingRoomsCubit extends Cubit<CallingRoomsState> {
     await _deleteTheRoomUseCase
         .call(paramsOne: channelId, paramsTwo: usersIds)
         .then((_) {
-      emit(const CallingRoomsLoaded(channelId: ""));
+      emit( CallingRoomsLoaded(channelId: channelId));
     }).catchError((e) {
       emit(CallingRoomsFailed(e.toString()));
     });
@@ -89,7 +90,7 @@ class CallingRoomsCubit extends Cubit<CallingRoomsState> {
             paramsTwo: channelId,
             paramsThree: isThatAfterJoining)
         .then((_) {
-      emit(const CallingRoomsLoaded(channelId: ""));
+      emit( CallingRoomsLoaded(channelId: channelId));
     }).catchError((e) {
       emit(CallingRoomsFailed(e.toString()));
     });

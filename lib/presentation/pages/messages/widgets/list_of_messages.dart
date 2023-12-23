@@ -45,6 +45,7 @@ class _ListOfMessagesState extends State<ListOfMessages> {
   void initState() {
     myPersonalInfo = UsersInfoReelTimeBloc.getMyInfoInReelTime(context) ??
         UserInfoCubit.getMyPersonalInfo(context);
+    setState(() {});
     super.initState();
   }
 

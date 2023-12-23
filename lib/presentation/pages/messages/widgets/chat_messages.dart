@@ -87,18 +87,18 @@ class _ChatMessagesState extends State<ChatMessages>
   @override
   void dispose() {
     _colorAnimationController.dispose();
-    indexOfGarbageMessage.dispose();
-    deleteThisMessage.dispose();
-    newMessageInfo.dispose();
+    // indexOfGarbageMessage.dispose();
+    // deleteThisMessage.dispose();
+    // newMessageInfo.dispose();
     scrollControl.dispose();
     _textController.dispose();
-    isDeleteMessageDone.dispose();
-    isMessageLoaded.dispose();
-    appearIcons.dispose();
-    unSend.dispose();
-    reLoad.dispose();
-    records.dispose();
-    audioPlayer.dispose();
+    // isDeleteMessageDone.dispose();
+    // isMessageLoaded.dispose();
+    // appearIcons.dispose();
+    // unSend.dispose();
+    // reLoad.dispose();
+    // records.dispose();
+    // audioPlayer.dispose();
     super.dispose();
   }
 
@@ -109,6 +109,7 @@ class _ChatMessagesState extends State<ChatMessages>
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     _colorTween = ColorTween(begin: Colors.purple, end: Colors.blue)
         .animate(_colorAnimationController);
+    setState(() {});
     super.initState();
   }
 
@@ -135,6 +136,7 @@ class _ChatMessagesState extends State<ChatMessages>
     isThatGroupChat = messageDetails.isThatGroupChat;
     audioPlayer = AudioPlayer();
     tempLengthOfRecord = 0;
+    setState(() {});
   }
 
   @override
@@ -324,7 +326,7 @@ class _ChatMessagesState extends State<ChatMessages>
   Column buildUserInfo(BuildContext context) {
     return Column(
       children: [
-        circleAvatarOfImage(),
+        CircleAvatar(),
         const SizedBox(height: 10),
         nameOfUser(),
         if (receiversInfo.length == 1) ...[
@@ -1124,7 +1126,7 @@ class _ChatMessagesState extends State<ChatMessages>
           width: 10,
         ),
         Text(
-          "agora",
+          "Agora",
           style: TextStyle(
               color: Theme.of(context).focusColor,
               fontSize: 14,

@@ -113,7 +113,7 @@ Future<void> _pushToPage(
       channelName: channel,
       role: ClientRoleType.clientRoleBroadcaster,
       userCallingId: userCallingId,
-      userCallingType: UserCallingType.receiver,
+      userCallingType: UserCallingType.receiver, voiceORvideo: '',
     );
   } else {
     page = BlocProvider<MessageBloc>(
