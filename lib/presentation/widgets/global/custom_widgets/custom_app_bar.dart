@@ -128,7 +128,8 @@ class CustomAppBar {
       await CustomImagePickerPlus.pickFromBoth(context);
   }
 
-  static AppBar chattingAppBar(
+  static AppBar
+  chattingAppBar(
       List<UserPersonalInfo> usersInfo, BuildContext context) {
     int length = usersInfo.length;
     length = length >= 3 ? 3 : length;
